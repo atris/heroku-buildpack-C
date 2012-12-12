@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
+set -e
 
 BUILD_DIR=$1
 CACHE_DIR=$2
