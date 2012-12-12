@@ -5,6 +5,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 LP_DIR=`cd $(dirname $0); cd ..; pwd`
 
+cd $BUILD_DIR
 file1="Makefile"
 file2="makefile"
 if [ -f $file1 ]
