@@ -1,6 +1,6 @@
 # Heroku Buildpack: Ø
 
-Use Ø if you need Heroku to execute a binary.
+Use C-Buildpack if you need Heroku to execute a C application.
 
 ## Usage
 

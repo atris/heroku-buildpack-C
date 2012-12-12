@@ -1,4 +1,23 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
-echo "-----> Nothing to do."
+BUILD_DIR=$1
+CACHE_DIR=$2
+LP_DIR=`cd $(dirname $0); cd ..; pwd`
+
+file1="Makefile"
+file2="makefile"
+if [ -f $file1 ]
+then
+    echo "-----> Makefile found"
+    make $file1
+elif [ -f $file2 ]
+then
+    echo "-----> makefile found"
+    make $file2
+else
+    echo "-----> No Makefile found.Compilation cannot continue."
+    exit 1;
+fi
+
+echo "-----> Compilation done"
