@@ -12,14 +12,13 @@ file2="makefile"
 if [ -f $file1 ]
 then
     echo "-----> Makefile found"
-    make $file1
 elif [ -f $file2 ]
 then
     echo "-----> makefile found"
-    make $file2
 else
     echo "-----> No Makefile found.Compilation cannot continue."
     exit 1;
 fi
 
+make
 echo "-----> Compilation done"
