@@ -1,41 +1,24 @@
-# Heroku Buildpack: Ø
+# Heroku Buildpack: C
 
 Use C-Buildpack if you need Heroku to execute a C application.
 
 ## Usage
 
-Create a directory for our Heroku app:
+$> heroku create myapp_name -s cedar
+$> heroku config:add BUILDPACK_URL=https://github.com/atris/heroku-buildpack-C.git
 
-```bash
-$ mkdir -p myapp/bin
-$ cd myapp
-```
+# create your app, see test-app for an example
 
-Here is an example of an executable that will run on 64bit linux machine:
+$> git push heroku master
 
-```bash
-$ echo -e "#\!/usr/bin/env bash\n echo hello world" > ./bin/program
-$ echo -e "program: bin/program" > Procfile
-$ chmod +x ./bin/program
-$ ./bin/program
-hello world
-```
+-----> Heroku receiving push
+-----> Fetching custom git buildpack... done
+-----> C app detected
+-----> makefile found
+makefile:4: *** missing separator.  Stop.
+-----> Compilation done
+-----> Discovering process types
+       Procfile declares types -> (none)
+-----> Compiled slug size: 4K
+-----> Launching... done, v5
 
-Push the app to Heroku and run our executable:
-
-```bash
-$ git init; git add .; git commit -am 'init'
-$ heroku create --buildpack http://github.com/ryandotsmith/null-buildpack.git
-$ git push heroku master
-$ heroku run program
-Running `program` attached to terminal... up, run.8663
-hello world
-```
-
-## Motivation
-
-I wanted to run various executables (e.g. [log-shuttle](https://github.com/ryandotsmith/log-shuttle)) on Heroku without compiling them on Heroku. Thus, I compile programs on my linux 64 machine, or fetch the binary from the project, commit them to a repo and then run them on Heroku with the Ø buildpack.
-
-## Issues
-
-You will need to make sure that a 64bit linux machine can execute the binary.
