@@ -15,7 +15,7 @@ $> git push heroku master
 
 <br>-----> Heroku receiving push
 <br>-----> Fetching custom git buildpack... done
-<br?-----> C app detected
+<br>-----> C app detected
 <br>-----> makefile found
 <br>makefile:4: *** missing separator.  Stop.
 <br>-----> Compilation done
