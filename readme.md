@@ -17,10 +17,11 @@ $> git push heroku master
 <br>-----> Fetching custom git buildpack... done
 <br>-----> C app detected
 <br>-----> makefile found
-<br>makefile:4: *** missing separator.  Stop.
+<br>gcc -o greesc1 greesc1.c
 <br>-----> Compilation done
 <br>-----> Discovering process types
        <br>Procfile declares types -> (none)
 <br>-----> Compiled slug size: 4K
-<br>-----> Launching... done, v5
+<br>-----> Launching... done, v9
+
 
