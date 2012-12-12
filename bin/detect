@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
 
-echo "C"
+ls -U *.c > /dev/null 2>&1 && (echo "C") || exit 1
